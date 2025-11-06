@@ -21,9 +21,11 @@ cap = cv2.VideoCapture(0)  # Change only if you have more than one webcams
 #object_detection/'
 # What model to download.
 # Models can bee found here: https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md
+# https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md
 MODEL_NAME = 'mask_rcnn_inception_resnet_v2_atrous_coco_2018_01_28'
 MODEL_FILE = MODEL_NAME + '.tar.gz'
 #DOWNLOAD_BASE = 'http://download.tensorflow.org/models/  m1
+#DOWNLOAD_BASE = 'http://download.tensorflow.org/models/object_detection/'
 
 # Path to frozen detection graph. This is the actual model that is used for the object detection.
 PATH_TO_CKPT = MODEL_NAME + '/frozen_inference_graph.pb'
@@ -111,3 +113,4 @@ with detection_graph.as_default():
             if cv2.waitKey(25) & 0xFF == ord('q'):
                 cv2.destroyAllWindows()
                 break
+
